@@ -11,25 +11,25 @@ const {mix} = require('laravel-mix');
  |
  */
 const buildDir = process.env.BUILD_DIR;
-const buildPath = './public/' + buildDir + '/';
-const resourcePath = 'resources/' + buildDir + '/';
+const publicPath = `./public/${buildDir}/`;
+const srcPath = `resources/${buildDir}/`;
 mix
-    .setPublicPath(buildPath)
-    .setResourceRoot('/' + buildDir + '/')
-    .js(resourcePath + '/js/app.js', 'js')
-    .sass(resourcePath + '/sass/app.scss', 'css')
+    .setPublicPath(publicPath)
+    .setResourceRoot(`/${buildDir}/`)
+    .js(`${srcPath}/admin/js/app.js`, 'js/admin.app.js')
+    .sass(`${srcPath}/admin/sass/app.scss`, 'css/admin.app.css')
     .extract(['vue', 'vue-router', 'vuex'])
     .webpackConfig({
         output: {
-            publicPath: './' + buildDir + '/',
+            publicPath: `./${buildDir}/`,
             chunkFilename: 'js/[name].[chunkhash].js',
         },
         resolve: {
             alias: {
                 package: path.resolve(__dirname, './package.json'),
-                assets: path.resolve(__dirname, resourcePath + '/js/assets'),
-                views: path.resolve(__dirname, resourcePath + '/js/views/'),
-                'vuex-store': path.resolve(__dirname, resourcePath + '/js/store'),
+                assets: path.resolve(__dirname, `${srcPath}/admin/js/assets`),
+                views: path.resolve(__dirname, `${srcPath}/admin/js/views/`),
+                'admin-vuex-store': path.resolve(__dirname, `${srcPath}/admin/js/store`),
                 'plotly.js': 'plotly.js/dist/plotly'
             }
         }

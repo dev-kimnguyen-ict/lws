@@ -1,5 +1,6 @@
 /node_modules
 /public/builds
+/public/coverage
 /storage/*.key
 /vendor
 /.idea

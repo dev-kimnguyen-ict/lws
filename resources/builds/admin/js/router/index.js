@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import menuModule from 'vuex-store/modules/menu'
+import menuModule from 'admin-vuex-store/modules/menu'
 
 Vue.use(Router);
 

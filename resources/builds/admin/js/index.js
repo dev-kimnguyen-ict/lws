@@ -5,7 +5,7 @@ import App from './views/App.vue';
 import router from './router';
 import store from './store';
 import * as filters from './filters';
-import {TOGGLE_SIDEBAR} from 'vuex-store/mutation-types';
+import {TOGGLE_SIDEBAR} from 'admin-vuex-store/mutation-types';
 
 Vue.use(NProgress);
 
